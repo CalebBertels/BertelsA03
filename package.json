@@ -1,0 +1,18 @@
+{   "name": "A03",
+    "version": "0.0.1",
+    "description": "simple guestbook app",
+    "main": "server.js",
+    "dependencies": {
+        "express": "latest",
+        "morgan": "latest",
+        "body-parser": "latest",
+        "ejs": "latest"
+    },
+    "author": "Caleb Bertels",
+    "homepage": "https://github.com/CalebBertels/BertelsA03",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/CalebBertels/BertelsA03"
+    },
+     "license": "Apache-2.0"
+}
