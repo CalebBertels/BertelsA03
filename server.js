@@ -20,12 +20,25 @@ app.use(logger("dev"));
 app.use(bodyParser.urlencoded({ extended: false }));
 
 // http GET (default and /new-entry)
-app.get("/", function (request, response) {
+app.get("/guestbook", function (request, response) {
   response.render("index");
 });
 app.get("/new-entry", function (request, response) {
   response.render("new-entry");
 });
+app.get("/contact", function (request, response) {
+  response.sendFile(__dirname + "/assets/contact-page.html");
+});
+app.get("/about", function (request, response) {
+  response.sendFile(__dirname + "/assets/about-me.html");
+});
+app.get("/home", function (request, response) {
+  response.sendFile(__dirname + "/assets/home.html");
+});
+app.get("/", function (request, response) {
+  response.sendFile(__dirname + "/assets/home.html");
+});
+
 
 // http POST (INSERT)
 app.post("/new-entry", function (request, response) {
@@ -38,7 +51,7 @@ app.post("/new-entry", function (request, response) {
     content: request.body.body,
     published: new Date()
   });
-  response.redirect("/");
+  response.redirect("/guestbook");
 });
 
 // 404
